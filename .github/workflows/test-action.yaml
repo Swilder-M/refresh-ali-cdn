@@ -17,7 +17,7 @@ jobs:
       with:
         access_key_id: ${{ secrets.ALI_ACCESS_KEY_ID }}
         access_key_secret: ${{ secrets.ALI_ACCESS_KEY_SECRET }}
-        file_paths: ｜
+        file_paths:
           https://api.codming.com/
           https://img.codming.com/
           https://api.codming.com/test.txt
