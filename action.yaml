@@ -22,4 +22,4 @@ runs:
     - shell: bash
       run: |
         pip3 install alibabacloud_cdn20180510==1.0.7
-        python3 refresh_cdn_cache.py ${{ inputs.access_key_id }} ${{ inputs.access_key_secret }} ${{ inputs.file_paths }}
+        python3 ${{ github.action_path }}/refresh_cdn_cache.py ${{ inputs.access_key_id }} ${{ inputs.access_key_secret }} ${{ inputs.file_paths }}
