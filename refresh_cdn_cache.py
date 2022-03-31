@@ -14,6 +14,8 @@ access_key_id = argv[0]
 access_key_secret = argv[1]
 file_paths = argv[2:]
 
+print('file_paths:', file_paths)
+
 
 if __name__ == '__main__':
     config = open_api_models.Config(
@@ -32,6 +34,7 @@ if __name__ == '__main__':
             file_list.append(file_path)
 
     if file_list:
+        print('Refresh file cache:', ' '.join(file_list))
         refresh_object_caches_request = cdn_20180510_models.RefreshObjectCachesRequest(
             object_path='\n'.join(file_list), object_type='File'
         )
@@ -39,6 +42,7 @@ if __name__ == '__main__':
         print(refresh_object_caches_response.body)
 
     if directory_list:
+        print('Refresh directory cache:', ' '.join(directory_list))
         refresh_object_caches_request = cdn_20180510_models.RefreshObjectCachesRequest(
             object_path='\n'.join(directory_list), object_type='Directory'
         )
