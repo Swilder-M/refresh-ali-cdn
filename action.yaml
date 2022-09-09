@@ -21,5 +21,6 @@ runs:
   steps:
     - shell: bash
       run: |
-        pip3 install alibabacloud_cdn20180510
+        pip3 install cryptography==2.8
+        pip3 install alibabacloud_cdn20180510==1.1.11
         python3 ${{ github.action_path }}/refresh_cdn_cache.py ${{ inputs.access_key_id }} ${{ inputs.access_key_secret }} ${{ inputs.file_paths }}
